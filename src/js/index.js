@@ -1,12 +1,16 @@
-//import react into the bundle
 import React from "react";
 import ReactDOM from "react-dom";
 
-// include your styles into the webpack bundle
-import "../styles/index.css";
+import "../styles/style.css";
 
-//import your own components
-import Home from "./component/home.jsx";
+import SecondsCounter from "../js/component/home.jsx";
 
-//render your react application
-ReactDOM.render(<Home />, document.querySelector("#app"));
+let counter = 0;
+
+setInterval(function () {
+	ReactDOM.render(
+		<SecondsCounter seconds={counter} />,
+		document.getElementById("root")
+	);
+	counter += 1;
+}, 1000);
