@@ -3,14 +3,14 @@ import ReactDOM from "react-dom";
 
 import "../styles/style.css";
 
-import SecondsCounter from "../js/component/home.jsx";
+import SecondsCounter from "./component/SecondsCounter.jsx";
 
 let counter = 0;
 
 setInterval(function () {
 	ReactDOM.render(
 		<SecondsCounter seconds={counter} />,
-		document.getElementById("root")
+		document.getElementById("app")
 	);
 	counter += 1;
 }, 1000);
